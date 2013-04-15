@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>GGXXAC+R ミカド初心者対戦会 イベントページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GGXXAC+R ミカド初心者対戦会イベントの詳細ページです">
+	<meta name="keywords" content="GGXXAC+R,初心者,高田馬場ミカド,対戦会,イベント">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+	  .left{
+		padding-top: 5px;
+		padding-left: 10px;
+	  }
+    </style>
+    <!--
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!--
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./">GGXXAC The Last Battle</a>
+<?php	include "./ssi/footer_menu.html"; ?>          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+      <div class="row">
+        <div class="span12">
+			<h2>GGXXAC+R ミカド初心者対戦会参加表明フォーム</h2><br /><br />
+		  
+<?php	$count = count($ahBeginner);	?>
+<?php	if($count < 20 && CNF_NOW_DATETIME < "2013-01-12 12:00:00"){	?>
+				<ul class="unstyled" style="margin-bottom:10px;">
+				  <li>下記フォームを入力してください。</li>
+				  <li>メッセージ欄は任意です。講師に教えて欲しいこと、要望、ご意見などありましたら遠慮なくご記入ください。</li>
+				</ul>
+		
+	<?php	if($hErrMsg["base"] != ""){	?>
+	<div class="red">
+	<?php	echo $hErrMsg["base"]."<br />"; ?>
+	<?php	echo nl2br($strErrMsg);	?>
+	
+	</div>
+	<?php	}	?>
+	<?php	if($mode != "end"){	?>
+		<div style="margin-top:10px;">
+	         <form action="" method="POST">
+	          <table width="700" class="table-bordered">
+				  <thead>
+				<?php		if ($mode == "conf"){	?>
+				  <span style="font-weight:bold;">【確認画面】</span>
+				<?php		}	?>
+				  </thead>
+				  <tbody>
+				  <tr><td width="150" class="table-bordered">エントリーネーム<span class="red">【必須】　</span></td><td class="left table-bordered"><?php echo $form->tag("name") ?></td></tr>
+				  <tr><td class="table-bordered">使用キャラクター<span class="red">【必須】　</span></td><td class="left table-bordered"><?php echo $form->tag("chara") ?></td></tr>
+				  <tr><td class="table-bordered">ギルティギアシリーズに関して、当てはまる質問にはチェックを入れてください。<br /><span class="red">【必須】　</span></td><td class="left table-bordered"><?php echo $form->tag("question") ?></td></tr>
+				  <tr><td class="table-bordered">ミカド初心者対戦会に以前参加したことがありますか？<br /><span class="red">【必須】　</span></td><td class="left table-bordered"><?php echo $form->tag("exp") ?></td></tr>
+				  <tr><td class="table-bordered">練習台を使用希望ですか？<br /><span class="red">【必須】　</span></td><td class="left table-bordered"><?php echo $form->tag("prac") ?></td></tr>
+				  <tr><td class="table-bordered">ギルティギアシリーズ以外に格闘ゲームをやったことがあればタイトルを記入してください<br /><span class="blue">【任意】　</span></td><td class="left table-bordered"><?php echo $form->tag("message") ?></td></tr>
+				  <tr><td class="table-bordered">メッセージ(出来れば参加目的などをお書き下さい)<br /><span class="blue">【任意】　</span></td><td class="left table-bordered"><?php echo $form->tag("message2") ?></td></tr>
+				  </tbody>
+			</table>
+				<input type="hidden" name="mode" value="<?php echo $mode ?>">
+			<div  style="margin-top:20px;">	
+				<?php		if ($mode == "conf"){	?>
+				<input type="submit" name="agree" value="　送　信　" style="margin-right:20px;" class="btn danger">
+				<input type="submit" name="back" value="　戻　る　" class="btn danger">
+				<?php		}else{	?>
+				
+				<input type="submit" name="agree" value="確認画面へ" class="btn danger">
+				<?php		}	?>
+			</div>
+			</form>
+		</div>
+	<?php	}else{	?>
+	<form action="" method="POST">
+		<div style="margin-top:10px;">	
+			エントリーありがとうございました。当日のご参加をお待ちしております。
+		</div>
+		<input type="hidden" name="mode" value="<?php echo $mode ?>">
+	</form>
+	<?php	}	?>
+		</div>
+      </div>
+	</div>
+      <!-- Example row of columns -->
+      
+      <hr>
+				
+<?php	}else{	?>
+				参加人数が上限に達してしまいました。次回の対戦会に是非ご参加ください。
+<?php	}	?>
+      <footer>
+        <p><a href="./">トップへ戻る</a></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+-->
+  </body>
+</html>

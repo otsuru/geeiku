@@ -1,0 +1,15 @@
+#AuthUserFile /home/sou-opinion/etc/.htpasswd
+#AuthType Basic
+#AuthGroupFile /dev/null
+#AuthName IDとパスワードを入力してください
+#require valid-user
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /ggxxsns 
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ /ggxxsns/index.php?/$1 [L]
+	#RewriteRule ^(.*)$ index.php/$1 [L]
+	#RewriteRule ^(.*)$ http://sou-opinion.sakura.ne.jp/ggxxsns/index.php/$1 [L]
+</IfModule>
