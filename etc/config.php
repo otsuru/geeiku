@@ -92,17 +92,17 @@ DEFINE('CNF_LOGIN_EXPIRE', 0);
 $cnf_hDB = array();
 // ミラー
 if (CNF_SV_TYPE == 0){
-	$cnf_hDB{"dbname"} = 'sou-opinion_ac_db';
-	$cnf_hDB{"hostname"} = 'mysql429.db.sakura.ne.jp';
-	$cnf_hDB{"user"} = 'sou-opinion';
-	$cnf_hDB{"pass"} = 'qFpSqwNJni6A';
+	$cnf_hDB{"dbname"} = '';
+	$cnf_hDB{"hostname"} = '';
+	$cnf_hDB{"user"} = '';
+	$cnf_hDB{"pass"} = '';
 }
 // 本番
 elseif (CNF_SV_TYPE == 1){
-	$cnf_hDB{"dbname"} = 'entryt_aesdb';
-	$cnf_hDB{"hostname"} = 'localhost';
-	$cnf_hDB{"user"} = 'entryt_aesdb';
-	$cnf_hDB{"pass"} = 'LZCtT&c%INA$';
+	$cnf_hDB{"dbname"} = '';
+	$cnf_hDB{"hostname"} = '';
+	$cnf_hDB{"user"} = '';
+	$cnf_hDB{"pass"} = '';
 }
 
 /*  その他
