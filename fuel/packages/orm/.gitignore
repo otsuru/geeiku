@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *~
 *.bak
 Thumbs.db
@@ -9,4 +10,17 @@ desktop.ini
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
 nbproject/
+=======
+*~
+*.bak
+Thumbs.db
+desktop.ini
+.DS_Store
+.buildpath
+.project
+.settings
+fuel/app/logs/*/*/*
+fuel/app/cache/*/*
+nbproject/
+>>>>>>> 5035f25efbdd9bc0c2f4e7c1b2b81e6299cce8ce
 .idea

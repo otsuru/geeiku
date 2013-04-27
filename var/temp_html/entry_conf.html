@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>GGXXAC The Last Battle運営ページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <!--
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!--
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./">GGXXAC The Last Battle</a>
+<?php	include "./ssi/footer_menu.html"; ?>          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+      <div class="row">
+	    <div class="span12">
+			<div style="margin-top:10px;">	
+			
+			<h2>エントリー選手一覧</h2>
+			<div>
+				<dl>
+					<dt>事前エントリー終了のお知らせ</dt>
+					<!--
+					<dd>事前エントリー受付は8月5日(日)までとなっております。これは事前にトーナメント表を作成し公開する為と、当日のスムーズな運営を目的としています。</dd>
+					-->
+					<dd>事前エントリーは終了いたしました。多数のエントリー、ありがとうございます。</dd>
+					<dd>現在は3ONの斡旋エントリーのみ、受け付けております。</dd>
+					<dd>当日エントリーは全ての種目で受け付けておりますが、基本的に<span class="red">事前エントリーの方より不利な状態での参加</span>となります。ご理解ください。</dd>
+				</dl>
+	        </div>
+			<div style="margin:10px 0px 20px 0px;">	
+				<!--
+				  <p class="red">シングル大会の事前エントリーページは<a href="./single.php">こちらから</a></p>
+				  <p class="violet">レディース大会の事前エントリーページは<a href="./single_r.php">こちらから</a></p>
+				  <p class="orange">3ON3大会の事前エントリーページは<a href="./team.php">こちらから</a></p>
+				  -->
+				  <!--
+				  <p class="red">3ON3大会での斡旋ご希望の方は<a href="./services.php">こちらから</a>エントリーしてください</p>
+	  -->
+				</ul>
+			</div>
+			
+				<h2>各大会エントリー状況</h2>
+				 <div style="margin:10px 0px 10px 0px;">
+				  <p class="red">現在のシングルのエントリー参加者<?php echo count($ahCount_s)	?>人</p>
+				 
+	          	<table width="600" style="margin:10px 0px 20px 0px;">
+				  <?php		foreach($ahCount_s as $key => $value){	?>
+				  <?php if($key % 3 == "0"){	?>
+				  <tr>
+				  <?php	}	?>
+				  <?php		preg_match_all('/\((.*?)\)/',$ahCount_s[$key][chara],$matches);	?>
+				  <?php	echo '<td width="200">'.$ahCount_s[$key][name].$matches[0][0]."</td>"	?>
+				  <?php		}	?>
+				  <?php if($key % 3 == "2"){	?>
+				  </tr>
+				  <?php	}	?>
+				  </table>
+				  </div>
+				 <div style="margin:10px 0px 10px 0px;">
+				  <p class="violet">現在のレディースのエントリー参加者<?php echo count($ahCount_r)	?>人</p>
+				 
+	          	<table width="600" style="margin:10px 0px 20px 0px;">
+				  <?php		foreach($ahCount_r as $key => $value){	?>
+				  <?php if($key % 3 == "0"){	?>
+				  <tr>
+				  <?php	}	?>
+				  <?php		preg_match_all('/\((.*?)\)/',$ahCount_r[$key][chara],$matches);	?>
+				  <?php	echo '<td width="200">'.$ahCount_r[$key][name].$matches[0][0]."</td>"	?>
+				  <?php		}	?>
+				  <?php if($key % 3 == "2"){	?>
+				  </tr>
+				  <?php	}	?>
+				  </table>
+				  </div>
+				  
+				 <div style="margin:10px 0px 10px 0px;">
+				  <p class="orange">3ON3のエントリー参加者<?php echo count($ahCount_t)	?>チーム</p>
+				 
+	          	<table width="800" style="margin:10px 0px 20px 0px;">
+	          	<tr>
+	          		<th>チーム名</th><th colspan="3">チームメンバー</th>
+				  <?php		foreach($ahCount_t as $key => $value){	?>
+				  <tr  style="height: 30px;border: solid 1px #000">
+				  <th style="text-align:left;"><?php echo "　".$ahCount_t[$key][team_name]." 　";?></th>
+				  <?php		preg_match_all('/\((.*?)\)/',$ahCount_t[$key][chara_1],$matches);	?>
+				  <?php		preg_match_all('/\((.*?)\)/',$ahCount_t[$key][chara_2],$matches2);	?>
+				  <?php		preg_match_all('/\((.*?)\)/',$ahCount_t[$key][chara_3],$matches3);	?>
+				  <?php	echo '<td>'.$ahCount_t[$key][name_1].$matches[0][0]."</td>"	?>
+				  <?php	echo '<td>'.$ahCount_t[$key][name_2].$matches2[0][0]."</td>"	?>
+				  <?php	echo '<td>'.$ahCount_t[$key][name_3].$matches3[0][0]."</td>"	?>
+				  </tr>
+				  
+				  <?php	}	?>
+				  </table>
+				  </div>
+			</div>
+		</div>
+      </div>
+	</div>
+      <!-- Example row of columns -->
+      
+      <hr>
+
+      <footer>
+        <p><a href="./">トップへ戻る</a></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+-->
+  </body>
+</html>

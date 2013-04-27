@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "utf-8";/* エスケープ */
 
 /*:: フォーム制御 ::::::::::::::::::::::::::::::::::::::::::*/
@@ -44,4 +45,48 @@ iframe {
 
 .textsize14{
 	font-size:14px;
+=======
+@charset "utf-8";/* エスケープ */
+
+/*:: フォーム制御 ::::::::::::::::::::::::::::::::::::::::::*/
+.ja {ime-mode: active;}
+.en {ime-mode: disabled;}
+.inactive {ime-mode: inactive;}
+
+/*:: カラーパレット ::::::::::::::::::::::::::::::::::::::::::*/
+.skyblue{color:#0099FF;}
+.gray{color:#666;}
+.mossgreen{color:#8FC31F;}
+.red{color:#FF0000;}
+.dark_red{color:#CC0000}
+.violet{color:#cc0000;}
+.blue{color:#0000FF;}
+.dark_blue{color:#485377;}
+.pastel_red{color:#FFD7D7;}
+.beige_pink{color:#CC6666;}
+.white{color:#FFFFFF;}
+.orange{color:#FF6600;}
+.cream_yellow{color:#FFFFCC;}
+.purple{color:#AD8CCE;}
+.black{color:#000;}
+
+.font_bold{font-weight:bold;}
+
+img {  
+  max-width: 100%;  
+  height: auto;  
+}  
+  
+iframe {  
+  max-width: 100%;  
+  height: auto;  
+}
+
+.m-top {
+	margin-top: 10px;
+}
+
+.m-bottom {
+	margin-bottom: 10px;
+>>>>>>> 5035f25efbdd9bc0c2f4e7c1b2b81e6299cce8ce
 }

@@ -15,9 +15,15 @@
 include '../etc/config.php';
 include CNF_LIB_PATH.'header.php';
 include_once CNF_FORM_PATH.'const.php';
+<<<<<<< HEAD
 
 include_once CNF_FORM_PATH.'single.php';
 $form = new WidgetForm($widget, $f);
+=======
+
+include_once CNF_FORM_PATH.'single.php';
+$form = new WidgetForm($widget, $f);
+>>>>>>> 5035f25efbdd9bc0c2f4e7c1b2b81e6299cce8ce
 $form->makeTag();
 
 
@@ -39,6 +45,7 @@ if ($f->mode == ""  || $f->mode == "back" || $f->back != ""){
 				$strErrMsg .= constant("Err_".$key."_".$value)."\r\n";
 			}
 		}
+<<<<<<< HEAD
 	}
 
 	// エラーあり
@@ -48,6 +55,17 @@ if ($f->mode == ""  || $f->mode == "back" || $f->back != ""){
 	}else{
 		//確認ページ
 		$mode = "conf";
+=======
+	}
+
+	// エラーあり
+	if ($intErrCnt > 0){
+		$hErrMsg["base"] = "入力にエラーがあります";
+		$mode = "form";
+	}else{
+		//確認ページ
+		$mode = "conf";
+>>>>>>> 5035f25efbdd9bc0c2f4e7c1b2b81e6299cce8ce
 		$form->freeze();
 	}
 }elseif($f->mode == "conf"){
