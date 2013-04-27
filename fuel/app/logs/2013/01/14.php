@@ -1,0 +1,51 @@
+<?php defined('COREPATH') or exit('No direct script access allowed'); ?>
+
+Warning - 2013-01-14 21:32:03 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 21:59:55 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:00:37 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:00:37 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:01:19 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:01:25 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:01:46 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:25:24 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:25:26 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:26:00 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:26:16 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:37:15 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Error - 2013-01-14 22:37:15 --> 8 - Use of undefined constant ’login - assumed '’login' in /home/sou-opinion/fuel/app/views/login/index.php on line 11
+Warning - 2013-01-14 22:38:29 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:40:37 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:40:42 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:40:43 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:47:42 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Error - 2013-01-14 22:47:42 --> 8 - Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/sou-opinion/fuel/app/classes/controller/login.php on line 28
+Warning - 2013-01-14 22:51:29 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:51:33 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:58:26 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 22:58:56 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:04:06 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:06:43 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:09:42 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:10:33 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:10:47 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:16:44 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:20:19 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:22:28 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:22:50 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:23:40 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:24:08 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:24:44 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:25:12 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:25:55 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:29:29 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:30:29 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:31:42 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:32:21 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:33:01 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:33:02 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:43:24 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:46:29 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:48:07 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:52:57 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:53:33 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+Warning - 2013-01-14 23:59:09 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.

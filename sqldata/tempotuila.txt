@@ -1,0 +1,54 @@
+insert into gamecentertest (name,game,pref) values('ディノス札幌中央店(旧スガイ)','GGXXACPR,BB,P4U','1');
+insert into gamecentertest (name,game,pref) values('アドアーズ狸小路店','GGXXACPR,BB,P4U','1');
+insert into gamecentertest (name,game,pref) values('キャッツアイ清田店','GGXXACPR,BB,P4U','1');
+insert into gamecentertest (name,game,pref) values('キャッツアイ新札幌店','GGXXACPR,BB,P4U','1');
+insert into gamecentertest (name,game,pref) values('タイトーステーション仙台クリスロード','GGXXACPR,BB,P4U','1');
+insert into gamecentertest (name,game,pref) values('ゲームセンター東部','GGXXACPR,BB,P4U','');
+insert into gamecentertest (name,game,pref) values('横浜フリーダム','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('明大前dooffles','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('吉祥寺モナコ（ZEST）','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('タイトーステーション町田店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('クラブセガ綱島','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('タイトーステーション所沢店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('セガ所沢店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('池袋ランブルプラザ','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('中野TRF','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('神奈川レジャーランド厚木店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('CLUBSEGA秋葉原新館','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('柏ゲームアルファ','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('タイトーステーション小田原店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('キャメル東戸塚','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('ゲームパニック足立','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('ゲームスポット21','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('『ゲーム＆ビリヤード　アクセル』','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('プラサカプコン 甲府店','GGXXACPR,BB,P4U','100');
+insert into gamecentertest (name,game,pref) values('ゲームパニック甲府','GGXXACPR,BB,P4U','100');
+insert into gamecentertest (name,game,pref) values('ミラクルドーム(静岡','GGXXACPR,BB,P4U','100');
+insert into gamecentertest (name,game,pref) values('大須ゲームスカイ','GGXXACPR,BB,P4U','100');
+insert into gamecentertest (name,game,pref) values('セガワールド布施店','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('遊SPACE マジカル','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('三宮サンクス','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('京橋シャトーEX','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('難波ヒルズ','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('パロ加古川店','GGXXACPR,BB,P4U','1000');
+
+
+北海道・東北1
+関東10
+近畿1000
+中国四国10000
+九州100000
+
+
+
+insert into gamecentertest (name,game,pref) values('ラッキー木更津店','GGXXACPR,BB,P4U','10');
+insert into gamecentertest (name,game,pref) values('プレイランドキング七条店','GGXXACPR,BB,P4U','1000');
+insert into gamecentertest (name,game,pref) values('アミパラ鳥取店','GGXXACPR,BB,P4U','10000');
+insert into gamecentertest (name,game,pref) values('コムテックスクウェア金山','GGXXACPR,BB,P4U','100');
+insert into gamecentertest (name,game,pref) values('アミューズメントパフェパレパレ(徳島)','GGXXACPR,BB,P4U','10000');
+
+insert into gamecenter (name,game,pref) values('佐賀FASボウリングセンター','GGXXACPR,BB,P4U','10000');
+insert into gamecenter (name,game,pref) values('アミューズメントジャングル三雲','GGXXACPR,BB,P4U','1000');
+
+
+
