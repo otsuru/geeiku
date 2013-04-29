@@ -9,11 +9,11 @@ return array(
 	'default' => array(
 		'type' => 'mysql',
 		'connection' => array(
-			'hostname' => 'mysql429.db.sakura.ne.jp',
+			'hostname' => '',
 			'port' => '',
-			'database' => 'sou-opinion_ac_db',
-			'username' => 'sou-opinion',
-			'password' => 'qFpSqwNJni6A',
+			'database' => '',
+			'username' => '',
+			'password' => '',
 		),
 		'identifier' => '`',
 		'table_prefix' => '',
