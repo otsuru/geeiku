@@ -111,4 +111,53 @@ class Model_Checkin extends \Orm\Model
 			->where('checkin_datetime',"<",$after)
 			->delete();
 	}
+
+	/**
+	* 店舗毎のチェックインユーザー数を取得する
+	*
+	* @param Array $tenpo_and_games 取得対象のtenpo_idとgameのセット配列
+	* @param Array $datetime_range 到着予定時間の範囲
+	* @return Array 取得した店名(name)とユーザー数(cnt_user)の配列
+	*/
+	public static function get_checkin_summary($tenpo_and_games, $datetime_range)
+	{
+		$entries = array();
+
+		// TODO: 書き直したい一発で店舗名とユーザー数を取ってくるSQL、ormでうまく書く方法が思いつかなかった
+		$sql = <<<EOF
+SELECT `gc`.`name`, `gc`.`id`, count(ck.tenpo_id) as cnt_user, :game as game
+FROM `gamecenter` AS `gc` 
+LEFT JOIN (
+			select ck.tenpo_id
+			from checkin as ck
+			where ck.game = :game
+			and ck.tenpo_id = :tenpo_id
+			and ck.checkin_datetime between :checkin_datetime_start and :checkin_datetime_end
+) AS `ck` ON (`ck`.`tenpo_id` = `gc`.`id`) 
+WHERE `gc`.`id` = :tenpo_id
+GROUP BY `ck`.`tenpo_id` 
+LIMIT 1
+EOF;
+		if(!array_key_exists('start', $datetime_range) || !array_key_exists('end', $datetime_range)) {
+			return $entries;
+		}
+
+		foreach($tenpo_and_games as $tenpo_game){
+			if(!array_key_exists('tenpo_id', $tenpo_game) || !array_key_exists('game', $tenpo_game)) continue;
+			if(is_null($tenpo_game['tenpo_id']) || is_null($tenpo_game['game'])) continue;
+			$query = DB::query($sql);
+			$query->parameters(array(
+				'tenpo_id' => $tenpo_game['tenpo_id'],
+				'game' => $tenpo_game['game'],
+				'checkin_datetime_start' => $datetime_range['start'],
+				'checkin_datetime_end' => $datetime_range['end']
+			));
+			$result = $query->execute()->current();
+			$entries[] = $result;
+			//$entry = $result->as_array();
+			//if(count($entry)) $entries[] = $entry[0];
+		}
+
+		return $entries;
+	}
 }

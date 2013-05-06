@@ -10,19 +10,31 @@
     <tr><th>Myhome</th></tr>
     </thead>
     <tbody>
-    <tr><td><img src="/ggxxsns/u/profile_img/<?php echo $id; ?>/<?php echo $icon_name.".".$icon_ext; ?>"> <?php echo $name." [ID：".$id."]"; ?></td></tr>
-	<tr><td><div style="margin-bottom:5px;">【お気に入り店舗登録】</div><br />
-	
-		<?php	echo Form::select('fav_tenpo',$fav_tenpo,$select_list) ?>　
-		<?php echo \Form::select('fav_tenpo_game', $fav_tenpo_game,Controller_Users::arr_game(),array('class' => 'span4')); ?>　　
+    <tr><td><img src="/u/profile_img/<?php echo $id; ?>/<?php echo $icon_name.".".$icon_ext; ?>"> <?php echo $name." [ID：".$id."]"; ?></td></tr>
+	<tr><td>
+
+<div style="margin-bottom:5px;" >【お気に入り店舗に今日集まるプレイヤー】</div>
+<?php foreach($fav_checkin_summary as $tenpo_data){ ?>
+(<?php echo $games[$tenpo_data['game']]; ?>)<?php echo $tenpo_data['name']; ?>には<a href="/search/search?tenpo=<?php echo $tenpo_data['id']; ?>&game=<?php echo $tenpo_data['game']; ?>" ><?php echo $tenpo_data['cnt_user']; ?></a>人です<br/>
+<?php } ?>
+<br/>
+		<div style="margin-bottom:5px;">【お気に入り店舗登録】</div>
+		<?php echo Form::select('fav_tenpo',$fav_tenpo,$select_list) ?>　
+		<?php echo \Form::select('fav_tenpo_game', $fav_tenpo_game,Controller_Users::arr_game(),array('class' => 'span4')); ?>　　<br/>
+		<?php echo Form::select('fav_tenpo_2',$fav_tenpo_2,$select_list) ?>　
+		<?php echo \Form::select('fav_tenpo_game_2', $fav_tenpo_game_2,Controller_Users::arr_game(),array('class' => 'span4')); ?>　<br/>
+		<?php echo Form::select('fav_tenpo_3',$fav_tenpo_3,$select_list) ?>　
+		<?php echo \Form::select('fav_tenpo_game_3', $fav_tenpo_game_3,Controller_Users::arr_game(),array('class' => 'span4')); ?>　<br/>
 		<input name="entry" value="登　録" type="submit" id="form_submit" class="btn btn btn-warning"/>
-		
+
+
+<!--
 <?php if (isset($tenpo_u_data) && count($tenpo_u_data) != 0): ?>
 <h5>お気に入り店舗情報(<?php echo $select_list[$fav_tenpo] ?>)</h5>
 今日集まるプレイヤーは<?php	echo count($tenpo_u_data);	?>人です。
 <?php	foreach($tenpo_u_data as $key => $value){	?>
 <div style="margin-top:20px;">
-<img src="/ggxxsns/u/profile_img/<?php echo $tenpo_u_data[$key]["user_id"]; ?>/<?php echo $tenpo_u_data[$key]["profile"]["icon_name"].".".$tenpo_u_data[$key]["profile"]["icon_ext"]; ?>">
+<img src="/u/profile_img/<?php echo $tenpo_u_data[$key]["user_id"]; ?>/<?php echo $tenpo_u_data[$key]["profile"]["icon_name"].".".$tenpo_u_data[$key]["profile"]["icon_ext"]; ?>">
 <br />
 <?php		echo $tenpo_u_data[$key]["user_name"];	?>
 <?php		echo " (".$tenpo_u_data[$key]["checkin_datetime"].")<br />"; ?>
@@ -50,6 +62,7 @@ disabled="disabled"
 </div>
 <?php	}	?>
 <?php endif; ?>
+-->
 
 		</td>
 	</tr>

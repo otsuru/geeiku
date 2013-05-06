@@ -41,6 +41,18 @@ class Controller_Users extends Controller_Template
 			$tenpo_u_data = $this->fav_tenpo_entry_user($data['fav_tenpo'],$data['fav_tenpo_game']);
 		    $this->template->content->set('tenpo_u_data', $tenpo_u_data);
 		}
+
+
+		// 当日のチェックイン状況
+		$today = new DateTime();
+		$datetime_range = array(
+			'start' => $today->format('Y-m-d 00:00:00'),
+			'end' => $today->format('Y-m-d 23:59:59'),
+		);
+		$fav_checkin_summary = \Model_Checkin::get_checkin_summary($data['fav_data'],$datetime_range);
+	    $this->template->content->set('fav_checkin_summary', $fav_checkin_summary);
+	    // FIXME: ゲームリストはできればconfigに持って行きたい
+	    $this->template->content->set('games', $this->arr_game());
 	}
 	
 	public function action_form()
@@ -114,8 +126,13 @@ class Controller_Users extends Controller_Template
 					try
 					{
 						$users = Model_User::find($data['id']);
-						$users->fav_tenpo = $valid['fav_tenpo'];
-						$users->fav_tenpo_game = $valid['fav_tenpo_game'];
+						// TODO: ここでNULLにするよりも、バリデーション時にやるべき
+						$users->fav_tenpo        = is_numeric($valid['fav_tenpo']) ? $valid['fav_tenpo'] : NULL;
+						$users->fav_tenpo_game   = is_numeric($valid['fav_tenpo_game']) ? $valid['fav_tenpo_game'] : NULL;
+						$users->fav_tenpo_2      = is_numeric($valid['fav_tenpo_2']) ? $valid['fav_tenpo_2'] : NULL;
+						$users->fav_tenpo_game_2 = is_numeric($valid['fav_tenpo_game_2']) ? $valid['fav_tenpo_game_2'] : NULL;
+						$users->fav_tenpo_3      = is_numeric($valid['fav_tenpo_3']) ? $valid['fav_tenpo_3'] : NULL;
+						$users->fav_tenpo_game_3 = is_numeric($valid['fav_tenpo_game_3']) ? $valid['fav_tenpo_game_3'] : NULL;
 						$users->save();
 						
 						\Response::redirect(SITE_URL.'users');
@@ -213,6 +230,10 @@ class Controller_Users extends Controller_Template
 		
         $val->add('fav_tenpo', 'お気に入り店舗');
         $val->add('fav_tenpo_game', 'お気に入りゲーム');
+        $val->add('fav_tenpo_2', 'お気に入り店舗_2');
+        $val->add('fav_tenpo_game_2', 'お気に入りゲーム_2');
+        $val->add('fav_tenpo_3', 'お気に入り店舗_3');
+        $val->add('fav_tenpo_game_3', 'お気に入りゲーム_3');
         $val->add('search_tenpo', '検索店舗')
 		->add_rule('required');
         $val->add('search_game', '検索ゲーム')
@@ -340,6 +361,16 @@ class Controller_Users extends Controller_Template
 		$data['icon_ext'] = $account->icon_ext;
 		$data['fav_tenpo'] = $account->fav_tenpo;
 		$data['fav_tenpo_game'] = $account->fav_tenpo_game;
+		// FIXME: とりあえず既存処理触らないように別で入れとく
+		$data['fav_tenpo_2'] = $account->fav_tenpo_2;
+		$data['fav_tenpo_game_2'] = $account->fav_tenpo_game_2;
+		$data['fav_tenpo_3'] = $account->fav_tenpo_3;
+		$data['fav_tenpo_game_3'] = $account->fav_tenpo_game_3;
+		$data['fav_data'] = array(
+			array('tenpo_id' => $account->fav_tenpo, 'game' => $account->fav_tenpo_game),
+			array('tenpo_id' => $account->fav_tenpo_2, 'game' => $account->fav_tenpo_game_2),
+			array('tenpo_id' => $account->fav_tenpo_3, 'game' => $account->fav_tenpo_game_3)
+		);
 		if(!is_null($mycheckin)){
 			$data['tenpo_id'] = $mycheckin->tenpo_id;
 			$data['game'] = $mycheckin->game;

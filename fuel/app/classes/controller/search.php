@@ -59,7 +59,12 @@ class Controller_Search extends Controller_Template
 		//検索ページからの検索
 		$val = $this->_validation();
 
-		if (!$val->run())
+		// FIXME: getでも探せるようにしてみた
+		$override = array();
+		if(Input::get('tenpo', null)) $override['tenpo'] = Input::get('tenpo');
+		if(Input::get('game', null)) $override['game'] = Input::get('game');
+
+		if (!$val->run($override))
 		{
 			$this->_data['errors']   = $val->error();
 			$this->template->header = View::forge('default/header');
